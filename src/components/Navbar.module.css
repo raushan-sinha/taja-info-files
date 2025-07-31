@@ -1,20 +1,27 @@
 .navbar {
     position: fixed;
-    top: 20px;
-    left: 0;
-    right: 0;
-    height: 64px;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    z-index: 999;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    background: #1e3a5f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    top: 25px;
+    left: 0;
+    right: 0;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo {
-    font: 700 2rem monospace;
+    font: 700 1.8rem monospace;
     background: linear-gradient(45deg, #ff4d4d, #ff9f1a, #ffcd1a, #4dff4d, #1a9fff, #9f1aff);
     background-size: 400% 400%;
     -webkit-background-clip: text;
