@@ -1,25 +1,26 @@
+/* Navbar Container */
 .navbar {
     position: fixed;
-    position: fixed;
+    top: 25px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
     margin: 0 auto;
-    border-radius: 15px;
     padding: 1rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
     background: #1e3a5f;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    z-index: 1000;
-    top: 25px;
-    left: 0;
-    right: 0;
     transition: all 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Logo */
 .logo {
     font: 700 1.8rem monospace;
     background: linear-gradient(45deg, #ff4d4d, #ff9f1a, #ffcd1a, #4dff4d, #1a9fff, #9f1aff);
@@ -42,6 +43,7 @@
     }
 }
 
+/* Nav Links (Desktop) */
 .navlinks {
     display: flex;
     flex-direction: row;
@@ -62,40 +64,84 @@
     color: #38bdf8;
 }
 
-/* Tablets (max-width: 768px) */
+/* Hamburger Wrapper */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Hamburger Bars */
+.bar {
+    width: 25px;
+    height: 2px;
+    background: cyan;
+    transition: 0.4s;
+}
+
+/* Close Icon */
+.closeIcon {
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Tablet View */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 20px;
+        padding: 0 1.25rem;
         height: 60px;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .navlinks {
-        gap: 16px;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #1e3a5f;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0 2rem;
+        border-bottom: 1px solid #444;
+        transition: max-height 0.4s ease;
+    }
+
+    .navlinks.active {
+        max-height: 300px;
+        padding: 1rem 2rem;
     }
 
     .navlinks li a {
-        font-size: 0.9rem;
+        font: 500 1rem monospace;
+        padding: 8px 0;
     }
 }
 
-/* Mobile Devices (max-width: 480px) */
+/* Mobile View */
 @media (max-width: 480px) {
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
+        display: flex;
+        flex-direction: row;
+        place-items: center;
         gap: 10px;
         height: auto;
-    }
-
-    .navlinks {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
+        padding: 10px 20px;
     }
 
     .navlinks li a {
         font-size: 1rem;
-        padding: 4px 0;
+    }
+
+    /* Logo */
+    .logo {
+        font: 700 1.5rem monospace;
     }
 }
